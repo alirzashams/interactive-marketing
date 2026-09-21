@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang=fa dir=rtl>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content=width=device-width, initial-scale=1.0>
+  <title>کافه گدار | Godar Cafe - سیستم مارکتینگ تعاملی و گیمیفیکیشن</title>
+  <script src=https://cdn.tailwindcss.com></script>
+  <script src=https://unpkg.com/lucide@latest></script>
+  <link rel=preconnect href=https://fonts.googleapis.com>
+  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+  <link href=https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap rel=stylesheet>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: [''Vazirmatn'', ''sans-serif''] },
+          colors: { stone: { 850: ''#1c1917'', 900: ''#141210'', 950: ''#0c0a09'' } }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: ''Vazirmatn'', sans-serif;
+      background-color: #0c0a09;
+      color: #e7e5e4;
+      overflow-x: hidden;
+      background-image: radial-gradient(#292524 1px, transparent 1px), radial-gradient(#1c1917 1px, #0c0a09 1px);
+      background-size: 38px 38px;
+      background-position: 0 0, 19px 19px;
+    }
+    .hero-bg {
+      background: linear-gradient(135deg, #1c1917 0%, #0c0a09 100%);
+      box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+    }
+    .glass-box {
+      background: rgba(28, 25, 23, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(234, 88, 12, 0.2);
+    }
+    .fire-glow {
+      box-shadow: 0 0 40px -10px rgba(234, 88, 12, 0.35);
+    }
+    .tab-btn.active {
+      background-color: #ea580c;
+      color: #ffffff;
+    }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #0c0a09; }
+    ::-webkit-scrollbar-thumb { background: #44403c; border-radius: 9999px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+    }
+    .badge-points { background: #fffbeb; color: #92400e; }
+    .badge-streak { background: #eff6ff; color: #1e40af; }
+    .badge-achievement { background: #f0fdf4; color: #166534; }
+    .pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+  </style>
+</head>
+<body class=min-h-screen flex flex-col justify-between selection:bg-orange-600 selection:text-white>
+  <!-- Header -->
+  <header class=sticky top-0 z-50 glass-box border-b border-stone-800/80 px-4 lg:px-8 py-3>
+    <div class=max-w-6xl mx-auto flex items-center justify-between>
+      <div class=flex items-center gap-3>
+        <div class=w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-700 via-orange-600 to-amber-500 flex items-center justify-center text-stone-950 font-black text-xl shadow-lg shadow-orange-950/60>⛰️</div>
+        <div>
+          <span class=text-xl font-extrabold tracking-wider text-orange-400 block>گُـدار</span>
+          <a href=https://instagram.com/godarspot target=_blank class=text-[10px] text-stone-400 tracking-widest hover:text-orange-400 transition flex items-center gap-1 mt-0.5>
+            <i data-lucide=instagram class=w-3 h-3></i> @godarspot
+          </a>
+        </div>
+      </div>
+
+      <nav class=flex items-center gap-1 bg-stone-900/90 p-1 rounded-xl border border-stone-800 text-xs font-medium>
+        <button onclick=switchTab(''totem'') id=tab-totem class=tab-btn active px-3 py-1.5 rounded-lg transition flex items-center gap-1.5><i data-lucide=flame class=w-3.5 h-3.5></i> <span>کشف توتم</span></button>
+        <button onclick=switchTab(''menu'') id=tab-menu class=tab-btn px-3 py-1.5 rounded-lg transition text-stone-300 hover:text-white flex items-center gap-1.5><i data-lucide=book-open class=w-3.5 h-3.5></i> <span>منو</span></button>
+        <button onclick=switchTab(''secret'') id=tab-secret class=tab-btn px-3 py-1.5 rounded-lg transition text-stone-300 hover:text-white flex items-center gap-1.5><i data-lucide=sparkles class=w-3.5 h-3.5 text-amber-500></i> <span>منوی مخفی</span></button>
+        <button onclick=switchTab(''admin'') id=tab-admin class=tab-btn px-3 py-1.5 rounded-lg transition text-stone-300 hover:text-white flex items-center gap-1.5><i data-lucide=shield-check class=w-3.5 h-3.5></i> <span>صندوق</span></button>
+      </nav>
+    </div>
+  </header>
+  <main class=max-w-6xl mx-auto w-full px-4 py-6 flex-1>
+    <!-- VIEW 1: TOTEM & LIVE GEMINI SHAMAN -->
+    <section id=view-totem class=space-y-6>
+      <div class=relative overflow-hidden rounded-3xl p-6 sm:p-8 border border-orange-500/30 fire-glow hero-bg>
+        <div class=max-w-2xl relative z-10 space-y-2>
+          <div class=inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-bold>🪨 در پناه صخره‌های گدار</div>
+          <h1 class=text-2xl sm:text-4xl font-black text-white>توتم امروزت را در <span class=text-orange-500>گدار</span> کشف کن</h1>
+          <p class=text-stone-300 text-xs sm:text-sm leading-relaxed>با پیر غار گفتگو کن یا به ۳ پرسش غریزی پاسخ بده تا توتم و ۲۰٪ پیشکش اختصاصی برایت هویدا شود.</p>
+        </div>
+      </div>
+      <div class=grid grid-cols-1 lg:grid-cols-12 gap-6>
+        <!-- Quiz Panel -->
+        <div class=lg:col-span-6 glass-box rounded-2xl p-6 border border-stone-800 flex flex-col justify-between id=quiz-card>
+          <div id=quiz-locked class=hidden text-center py-10 space-y-3>
+            <div class=text-4xl>⏳</div>
+            <h3 class=text-base font-bold text-orange-400>توتم امروز شما کشف شده است!</h3>
+            <p class=text-xs text-stone-300>روح غار تنها روزی یک بار نشانه‌ها را می‌خواند. فردا بازگردید.</p>
+          </div>

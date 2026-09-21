@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #121212;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  text-align: center;
+  background: rgba(30, 30, 30, 0.8);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  max-width: 90%;
+  width: 400px;
+}
+
+.screen {
+  margin: 2rem 0;
+}
+
+h1 {
+  color: #ffd700; /* gold for mystical feel */
+  margin-bottom: 1.5rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background: #8b4513; /* saddle brown for stone/hearth */
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+  background: #a0522d; /* sienna */
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.options button {
+  flex: 1;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.options button.selected {
+  background: #ffd700;
+  color: #121212;
+  font-weight: bold;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+/* Add some animated sparkles for magical feel */
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffd700;
+  border-radius: 50%;
+  animation: sparkle 1.5s ease-out forwards;
+  pointer-events: none;
+}
